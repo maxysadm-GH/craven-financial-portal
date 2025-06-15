@@ -49,10 +49,10 @@ export default function IdealClientProfileForm() {
   return (
     <section className="w-full bg-blue-50 border border-blue-200 p-8 rounded-2xl my-12 shadow flex flex-col items-center animate-fade-in">
       <h2 className="text-2xl font-bold text-blue-900 mb-3 text-center">
-        Schedule your free assessment
+        Are we a good fit?
       </h2>
       <p className="mb-6 text-gray-700 text-center max-w-xl">
-        Share a snapshot of your business or family office, and a Craven Financial Solutions expert will reach out to discuss a tailored plan.
+        Tell us about your business or family office. Our experts will review your details and let you know if we're the right team to help you move forward.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg">
         <Input
