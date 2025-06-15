@@ -1,4 +1,3 @@
-
 const lines = [
   {
     name: "Accounting",
@@ -60,31 +59,31 @@ const lines = [
 
 export default function BusinessLines() {
   return (
-    <section className="max-w-7xl mx-auto px-4 pt-10 pb-20">
-      <h2 className="text-3xl font-bold text-blue-900 mb-10 text-center animate-fade-in">
-        {`Services That Power Results Across Texas`}
+    <section className="max-w-7xl mx-auto px-4 pt-14 pb-28">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-12 text-center animate-fade-in tracking-tight">
+        Services That Power Results Across Texas
       </h2>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
         {lines.map(line => (
           <a
             key={line.name}
             href={line.link}
-            className="group bg-white rounded-xl border border-blue-100 shadow-lg overflow-hidden transition hover-scale flex flex-col h-full animate-fade-in hover:shadow-2xl"
+            className="group bg-white rounded-2xl border border-blue-100 shadow-xl overflow-hidden transition hover-scale flex flex-col h-full animate-fade-in hover:shadow-2xl"
             style={{ boxShadow: "0 5px 30px 0 rgba(57,99,204,0.07)" }}
           >
-            <div className="relative h-36 w-full">
+            <div className="relative h-40 w-full">
               <img
                 src={line.image}
-                alt={line.name}
+                alt={line.name + ' - Service specialty by Craven Financial Solutions'}
                 className="object-cover h-full w-full transition-transform duration-200 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/25 to-transparent" />
             </div>
-            <div className="flex-1 flex flex-col p-6">
-              <h3 className="text-xl font-semibold mb-1 text-blue-800 group-hover:underline">{line.name}</h3>
-              <p className="text-gray-700 flex-1">{line.description}</p>
-              <span className="text-blue-700 mt-3 font-medium story-link">Learn More →</span>
+            <div className="flex-1 flex flex-col p-8">
+              <h3 className="text-2xl font-extrabold mb-2 text-blue-800 group-hover:underline">{line.name}</h3>
+              <p className="text-gray-700 flex-1 text-lg">{line.description}</p>
+              <span className="text-primary mt-5 font-bold story-link text-lg">Learn More →</span>
             </div>
           </a>
         ))}
