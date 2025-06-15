@@ -7,6 +7,8 @@ import BusinessLines from "@/components/sections/BusinessLines";
 import CTASection from "@/components/sections/CTASection";
 import CaseStudies from "@/components/sections/CaseStudies";
 import IndustryArticles from "@/components/sections/IndustryArticles";
+import ROIcalculator from "@/components/ROIcalculator";
+import IdealClientProfileForm from "@/components/IdealClientProfileForm";
 
 const Index = () => {
   return (
@@ -15,8 +17,10 @@ const Index = () => {
       <main className="flex-1 flex flex-col">
         <Hero />
         <BusinessLines />
+        <ROIcalculator />
         <CaseStudies />
         <IndustryArticles />
+        <IdealClientProfileForm />
         <CTASection />
       </main>
       <Footer />
