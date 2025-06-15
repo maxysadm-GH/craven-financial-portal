@@ -31,10 +31,10 @@ export default function IdealClientProfileForm() {
     return (
       <section className="w-full bg-emerald-50 border border-emerald-200 p-8 rounded-2xl shadow animate-scale-in text-center mt-12">
         <h2 className="text-2xl font-bold text-emerald-900 mb-3">
-          Thank you for submitting your profile!
+          Thank you for requesting your free assessment!
         </h2>
         <p className="text-gray-700 mb-6 max-w-lg mx-auto">
-          Our team will review your information and reach out to design a bespoke solution. Want to talk immediately?
+          Our team will review your information and connect to discuss custom solutions. Need immediate support?
         </p>
         <a
           href="/contact"
@@ -48,9 +48,11 @@ export default function IdealClientProfileForm() {
 
   return (
     <section className="w-full bg-blue-50 border border-blue-200 p-8 rounded-2xl my-12 shadow flex flex-col items-center animate-fade-in">
-      <h2 className="text-2xl font-bold text-blue-900 mb-3 text-center">Are We a Good Fit?</h2>
+      <h2 className="text-2xl font-bold text-blue-900 mb-3 text-center">
+        Schedule your free assessment
+      </h2>
       <p className="mb-6 text-gray-700 text-center max-w-xl">
-        See if Craven Financial Solutions is the right strategic partner.  Share a snapshot of your business or family office and we’ll reach out with a custom proposal.
+        Share a snapshot of your business or family office, and a Craven Financial Solutions expert will reach out to discuss a tailored plan.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg">
         <Input
@@ -100,7 +102,7 @@ export default function IdealClientProfileForm() {
           type="submit"
           className="mt-2 bg-blue-700 hover:bg-blue-900 text-white rounded-lg font-bold"
         >
-          Get My Custom Proposal
+          Schedule my free assessment
         </Button>
       </form>
     </section>
