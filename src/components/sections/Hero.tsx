@@ -5,15 +5,18 @@ export default function Hero() {
   return (
     <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 pt-16 pb-16 md:pb-24 md:pt-24">
       <div className="flex-1 space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight max-w-2xl">
-          Financial Clarity. Business Growth. <span className="text-blue-700">Executive Guidance.</span>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight max-w-2xl">
+          <span className="text-blue-700">Texas CFO, CPA & Advisory</span> for Ambitious Businesses & High Net Worth Families
         </h1>
-        <p className="max-w-xl text-lg md:text-xl text-gray-700">
-          Consolidating experience across finance, consulting, and business operations—Craven Financial Solutions empowers leaders and organizations to thrive.
+        <p className="max-w-xl text-base md:text-xl text-gray-700">
+          Trusted by clients statewide, Craven Financial Solutions delivers high-precision accounting, proactive tax strategy, and expert business consulting. From outsourced CFO and payroll to full-scope IT integration, our Texas-based team powers growth, protects assets, and streamlines compliance for retail, service businesses, ranching, real estate, and beyond.
         </p>
         <div className="flex gap-4 flex-col sm:flex-row">
-          <Link to="/contact" className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition hover-scale text-center">Schedule a Call</Link>
-          <Link to="/services" className="bg-white border border-blue-700 text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-50 transition hover-scale text-center">View Services</Link>
+          <Link to="/contact" className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition hover-scale text-center">Schedule a Consultation</Link>
+          <Link to="/services" className="bg-white border border-blue-700 text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-50 transition hover-scale text-center">Explore Services</Link>
+        </div>
+        <div className="text-xs mt-4 md:mt-2 text-blue-900 font-medium">
+          Serving Dallas, Austin, Houston, San Antonio and clients across Texas.
         </div>
       </div>
       <div className="flex-1 flex items-center justify-center md:justify-end">

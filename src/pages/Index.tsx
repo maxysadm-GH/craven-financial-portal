@@ -5,6 +5,8 @@ import ChatbotWidget from "@/components/ChatbotWidget";
 import Hero from "@/components/sections/Hero";
 import BusinessLines from "@/components/sections/BusinessLines";
 import CTASection from "@/components/sections/CTASection";
+import CaseStudies from "@/components/sections/CaseStudies";
+import IndustryArticles from "@/components/sections/IndustryArticles";
 
 const Index = () => {
   return (
@@ -13,6 +15,8 @@ const Index = () => {
       <main className="flex-1 flex flex-col">
         <Hero />
         <BusinessLines />
+        <CaseStudies />
+        <IndustryArticles />
         <CTASection />
       </main>
       <Footer />
