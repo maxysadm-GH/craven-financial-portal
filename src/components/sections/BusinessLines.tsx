@@ -1,3 +1,4 @@
+
 const lines = [
   {
     name: "Accounting",
@@ -61,7 +62,7 @@ export default function BusinessLines() {
   return (
     <section className="max-w-7xl mx-auto px-4 pt-14 pb-28">
       <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-12 text-center animate-fade-in tracking-tight">
-        Services That Power Results Across Texas
+        Services That Drive Results Across the USA
       </h2>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
         {lines.map(line => (
