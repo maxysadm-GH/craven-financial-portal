@@ -12,7 +12,7 @@ import IdealClientProfileForm from "@/components/IdealClientProfileForm";
 
 const Index = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-gray-50 min-h-screen flex flex-col">
+    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 flex flex-col">
         <Hero />

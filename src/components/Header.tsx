@@ -13,25 +13,33 @@ const navLinks = [
 export default function Header() {
   const location = useLocation();
   return (
-    <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="w-full bg-slate-900/95 backdrop-blur-sm border-b border-emerald-400/20 sticky top-0 z-50 shadow-lg">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-800 via-gray-200 to-blue-400 flex items-center justify-center shadow text-white font-extrabold text-2xl">
-            CF
+        <div className="flex items-center gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=60&q=80"
+            alt="Craven Financial Solutions Logo"
+            className="h-12 w-12 rounded-xl border-2 border-emerald-400 shadow-lg"
+            loading="eager"
+          />
+          <div className="flex flex-col">
+            <span className="font-black text-xl text-slate-100 tracking-wide">
+              Craven Financial Solutions
+            </span>
+            <span className="text-emerald-400 text-xs font-bold tracking-widest">
+              NATIONWIDE CFO & CPA SERVICES
+            </span>
           </div>
-          <span className="font-semibold text-xl text-gray-900 tracking-wide">
-            Craven Financial Solutions
-          </span>
         </div>
-        <ul className="flex gap-6 items-center">
+        <ul className="flex gap-8 items-center">
           {navLinks.map(link => (
             <li key={link.name}>
               <Link
                 to={link.path}
-                className={`font-medium px-2 py-1 transition-colors rounded ${
+                className={`font-bold px-4 py-2 transition-all duration-300 rounded-lg ${
                   location.pathname === link.path
-                    ? "text-blue-700"
-                    : "text-gray-700 hover:text-blue-700"
+                    ? "text-emerald-400 bg-emerald-400/10 border border-emerald-400/30"
+                    : "text-slate-300 hover:text-emerald-400 hover:bg-slate-800/50"
                 }`}
               >
                 {link.name}

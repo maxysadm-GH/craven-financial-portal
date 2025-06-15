@@ -60,31 +60,65 @@ const lines = [
 
 export default function BusinessLines() {
   return (
-    <section className="max-w-7xl mx-auto px-4 pt-14 pb-28">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-12 text-center animate-fade-in tracking-tight">
-        Services That Drive Results Across the USA
-      </h2>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
-        {lines.map(line => (
+    <section className="max-w-7xl mx-auto px-4 pt-20 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700">
+      <div className="text-center mb-16">
+        <h2 className="text-5xl md:text-6xl font-black text-emerald-400 mb-6 animate-fade-in tracking-tight">
+          Services That Drive Results Across the USA
+        </h2>
+        <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto font-medium leading-relaxed">
+          Comprehensive financial solutions from our strategic locations in Texas, serving ambitious businesses nationwide
+        </p>
+        <div className="flex flex-wrap justify-center gap-8 mt-8 text-emerald-300 font-semibold">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+            <span>Dallas-Fort Worth</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+            <span>Austin</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+            <span>Houston</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+            <span>San Antonio</span>
+          </div>
+        </div>
+      </div>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {lines.map((line, index) => (
           <a
             key={line.name}
             href={line.link}
-            className="group bg-white rounded-2xl border border-blue-100 shadow-xl overflow-hidden transition hover-scale flex flex-col h-full animate-fade-in hover:shadow-2xl"
-            style={{ boxShadow: "0 5px 30px 0 rgba(57,99,204,0.07)" }}
+            className="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border-2 border-emerald-400/20 shadow-2xl overflow-hidden transition-all duration-300 hover:border-emerald-400/60 hover:shadow-emerald-400/20 hover:shadow-3xl flex flex-col h-full animate-fade-in hover:scale-105"
+            style={{ 
+              animationDelay: `${index * 100}ms`,
+              boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.15)" 
+            }}
           >
-            <div className="relative h-40 w-full">
+            <div className="relative h-48 w-full overflow-hidden">
               <img
                 src={line.image}
                 alt={line.name + ' - Service specialty by Craven Financial Solutions'}
-                className="object-cover h-full w-full transition-transform duration-200 group-hover:scale-110"
+                className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/60 via-slate-900/40 to-transparent" />
+              <div className="absolute top-4 right-4 w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-slate-900 font-bold text-lg">{index + 1}</span>
+              </div>
             </div>
             <div className="flex-1 flex flex-col p-8">
-              <h3 className="text-2xl font-extrabold mb-2 text-blue-800 group-hover:underline">{line.name}</h3>
-              <p className="text-gray-700 flex-1 text-lg">{line.description}</p>
-              <span className="text-primary mt-5 font-bold story-link text-lg">Learn More →</span>
+              <h3 className="text-2xl font-black mb-4 text-emerald-400 group-hover:text-emerald-300 transition-colors">{line.name}</h3>
+              <p className="text-slate-300 flex-1 text-lg leading-relaxed font-medium">{line.description}</p>
+              <div className="mt-6 flex items-center text-emerald-400 font-bold text-lg group-hover:text-emerald-300 transition-colors">
+                <span className="mr-2">Explore Service</span>
+                <div className="w-6 h-6 rounded-full border-2 border-current flex items-center justify-center group-hover:translate-x-2 transition-transform">
+                  <span>→</span>
+                </div>
+              </div>
             </div>
           </a>
         ))}
