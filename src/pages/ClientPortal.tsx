@@ -93,42 +93,42 @@ export default function ClientPortal() {
                     What's Inside Your <span className="text-emerald-400">Dashboard</span>
                   </h3>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
-                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
                         <BarChart3 className="w-5 h-5 text-emerald-400" />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="text-slate-100 font-semibold">Real-time Analytics</div>
                         <div className="text-slate-400 text-sm">Live financial metrics and KPIs</div>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
-                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
                         <FileText className="w-5 h-5 text-emerald-400" />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="text-slate-100 font-semibold">Financial Reports</div>
                         <div className="text-slate-400 text-sm">Monthly statements and tax documents</div>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
-                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
                         <DollarSign className="w-5 h-5 text-emerald-400" />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="text-slate-100 font-semibold">Cash Flow Tracking</div>
                         <div className="text-slate-400 text-sm">Monitor income and expenses</div>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
-                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center flex-shrink-0">
                         <TrendingUp className="w-5 h-5 text-emerald-400" />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="text-slate-100 font-semibold">Growth Insights</div>
                         <div className="text-slate-400 text-sm">Strategic recommendations and forecasts</div>
                       </div>

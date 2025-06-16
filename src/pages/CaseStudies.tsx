@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatbotWidget from "@/components/ChatbotWidget";
-import { ArrowRight, TrendingUp, DollarSign, Users, Clock } from "lucide-react";
+import { ArrowRight, TrendingUp, DollarSign, Users, Clock, Target, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const caseStudies = [
@@ -22,7 +22,9 @@ const caseStudies = [
       savings: "$45K",
       timeframe: "6 months",
       improvement: "75%"
-    }
+    },
+    testimonial: "Craven Financial Solutions transformed our operations completely. The automated systems and strategic oversight have given us the clarity and control we never had before.",
+    client: "Regional Retail Chain Owner"
   },
   {
     icon: <Users className="w-8 h-8 text-emerald-400" />,
@@ -40,7 +42,9 @@ const caseStudies = [
       savings: "$120K",
       timeframe: "12 months", 
       improvement: "60%"
-    }
+    },
+    testimonial: "The level of expertise and attention to detail is exceptional. Our family's complex financial structure is now managed seamlessly.",
+    client: "Family Office Principal"
   },
   {
     icon: <DollarSign className="w-8 h-8 text-emerald-400" />,
@@ -58,7 +62,49 @@ const caseStudies = [
       savings: "$85K",
       timeframe: "9 months",
       improvement: "40%"
-    }
+    },
+    testimonial: "Having Craven as our virtual CFO has been a game-changer. We can focus on growing our business while they handle all the financial complexities.",
+    client: "Service Company CEO"
+  },
+  {
+    icon: <Target className="w-8 h-8 text-emerald-400" />,
+    title: "Manufacturing Efficiency Boost",
+    industry: "Manufacturing",
+    challenge: "Mid-size manufacturer faced rising costs, inefficient processes, and needed better financial visibility for expansion planning",
+    solution: "Implemented cost accounting systems, optimized workflows, and provided strategic financial planning for growth initiatives",
+    results: [
+      "22% reduction in operational costs",
+      "Improved financial forecasting accuracy",
+      "Successful expansion planning",
+      "Enhanced inventory management"
+    ],
+    metrics: {
+      savings: "$180K",
+      timeframe: "15 months",
+      improvement: "22%"
+    },
+    testimonial: "The cost savings and operational improvements have positioned us perfectly for our next phase of growth.",
+    client: "Manufacturing Director"
+  },
+  {
+    icon: <Award className="w-8 h-8 text-emerald-400" />,
+    title: "Tech Startup Financial Foundation",
+    industry: "Technology",
+    challenge: "Rapidly growing tech startup needed scalable financial systems, investor reporting, and compliance frameworks",
+    solution: "Built comprehensive financial infrastructure, established investor reporting protocols, and implemented scalable accounting systems",
+    results: [
+      "Streamlined investor communications",
+      "Scalable financial processes",
+      "Improved cash flow management",
+      "Enhanced financial transparency"
+    ],
+    metrics: {
+      savings: "$95K",
+      timeframe: "8 months",
+      improvement: "85%"
+    },
+    testimonial: "Craven gave us the financial foundation we needed to scale confidently. Their expertise in working with growing companies is invaluable.",
+    client: "Tech Startup Founder"
   }
 ];
 
@@ -127,6 +173,16 @@ export default function CaseStudies() {
                             </li>
                           ))}
                         </ul>
+                      </div>
+
+                      {/* Testimonial */}
+                      <div className="bg-slate-900/50 rounded-xl p-4 border-l-4 border-emerald-400">
+                        <blockquote className="text-slate-300 italic mb-2">
+                          "{study.testimonial}"
+                        </blockquote>
+                        <cite className="text-emerald-400 text-sm font-semibold">
+                          — {study.client}
+                        </cite>
                       </div>
                     </div>
                   </div>

@@ -7,9 +7,9 @@ export default function Footer() {
     <footer className="w-full bg-slate-900/98 backdrop-blur-sm border-t border-amber-400/20 mt-16 py-12 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-3">
               <img
                 src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
@@ -70,33 +70,77 @@ export default function Footer() {
           <div>
             <h3 className="text-amber-400 font-bold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li className="text-slate-300">Outsourced CFO Services</li>
-              <li className="text-slate-300">Tax Planning & Compliance</li>
-              <li className="text-slate-300">Accounting & Bookkeeping</li>
-              <li className="text-slate-300">Payroll Services</li>
-              <li className="text-slate-300">Business Consulting</li>
+              <li>
+                <Link to="/services#cfo" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Outsourced CFO Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#tax" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Tax Planning & Compliance
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#accounting" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Accounting & Bookkeeping
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#payroll" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Payroll Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#consulting" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Business Consulting
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Tools & Contact */}
           <div>
-            <h3 className="text-amber-400 font-bold mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-emerald-400" />
-                <a href="tel:+18555555555" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+            <h3 className="text-amber-400 font-bold mb-4">Tools</h3>
+            <ul className="space-y-2 text-sm mb-6">
+              <li>
+                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Tax Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Retirement Planner
+                </Link>
+              </li>
+              <li>
+                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Budget Planner
+                </Link>
+              </li>
+              <li>
+                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                  Loan Calculator
+                </Link>
+              </li>
+            </ul>
+            
+            <h4 className="text-amber-400 font-bold mb-3">Contact</h4>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3 h-3 text-emerald-400" />
+                <a href="tel:+18555555555" className="text-slate-300 hover:text-emerald-400 transition-colors text-xs">
                   +1 (855) 555-5555
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-emerald-400" />
-                <a href="mailto:info@cravenfs.com" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+              <div className="flex items-center gap-2">
+                <Mail className="w-3 h-3 text-emerald-400" />
+                <a href="mailto:info@cravenfs.com" className="text-slate-300 hover:text-emerald-400 transition-colors text-xs">
                   info@cravenfs.com
                 </a>
               </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-emerald-400 mt-0.5" />
-                <div className="text-slate-300 text-sm">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3 h-3 text-emerald-400 mt-0.5" />
+                <div className="text-slate-300 text-xs">
                   <div>Dallas • Austin</div>
                   <div>Houston • San Antonio</div>
                 </div>

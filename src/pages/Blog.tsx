@@ -3,7 +3,70 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatbotWidget from "@/components/ChatbotWidget";
 import { Link } from "react-router-dom";
-import { BookOpen, Clock, TrendingUp } from "lucide-react";
+import { BookOpen, Clock, TrendingUp, Calendar, User } from "lucide-react";
+
+const blogPosts = [
+  {
+    id: 1,
+    title: "5 Tax Planning Strategies Every Texas Business Owner Should Know",
+    excerpt: "Discover essential tax planning techniques that can save your business thousands in 2025, including depreciation strategies and retirement plan contributions.",
+    author: "Sarah Johnson, CPA",
+    date: "January 15, 2025",
+    readTime: "5 min read",
+    category: "Tax Planning",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    title: "When to Hire an Outsourced CFO: 7 Clear Signs Your Business is Ready",
+    excerpt: "Learn the key indicators that signal it's time to bring in strategic financial leadership to scale your business operations effectively.",
+    author: "Michael Chen, CFO",
+    date: "January 12, 2025",
+    readTime: "7 min read",
+    category: "CFO Services",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    title: "Cash Flow Management: The Ultimate Guide for Small Businesses",
+    excerpt: "Master the fundamentals of cash flow forecasting and management with our comprehensive guide designed specifically for growing businesses.",
+    author: "Lisa Rodriguez, CPA",
+    date: "January 10, 2025",
+    readTime: "8 min read",
+    category: "Financial Management",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    title: "Retirement Planning for Business Owners: Beyond the 401(k)",
+    excerpt: "Explore advanced retirement strategies including SEP-IRAs, Solo 401(k)s, and defined benefit plans that can maximize your retirement savings.",
+    author: "David Kim, CFP",
+    date: "January 8, 2025",
+    readTime: "6 min read",
+    category: "Retirement Planning",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 5,
+    title: "Understanding Texas Franchise Tax: A Complete Business Guide",
+    excerpt: "Navigate the complexities of Texas franchise tax with our detailed breakdown of calculations, exemptions, and filing requirements.",
+    author: "Jennifer Adams, CPA",
+    date: "January 5, 2025",
+    readTime: "9 min read",
+    category: "Tax Compliance",
+    image: "https://images.unsplash.com/photo-1554224154-26032fced8bd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 6,
+    title: "Bookkeeping Best Practices for Growing Service Businesses",
+    excerpt: "Implement proven bookkeeping systems that scale with your service business, from client billing to expense tracking and financial reporting.",
+    author: "Robert Martinez, CPA",
+    date: "January 3, 2025",
+    readTime: "7 min read",
+    category: "Bookkeeping",
+    image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?auto=format&fit=crop&w=800&q=80"
+  }
+];
 
 export default function Blog() {
   return (
@@ -19,49 +82,61 @@ export default function Blog() {
           </p>
         </div>
 
-        {/* Coming Soon Section */}
-        <div className="bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-12 shadow-2xl text-center mb-16">
-          <div className="w-24 h-24 bg-emerald-400/20 rounded-2xl flex items-center justify-center mx-auto mb-8">
-            <BookOpen className="w-12 h-12 text-emerald-400" />
-          </div>
-          <h2 className="text-3xl font-bold text-slate-100 mb-4">
-            Valuable Resources Coming Soon!
-          </h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Our team is preparing comprehensive insights and resources to help you navigate the complex world of business finance. Stay tuned for expert articles, case studies, and strategic guides.
-          </p>
-          
-          {/* Features Preview */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-slate-700/50 rounded-xl p-6 border border-emerald-400/20">
-              <TrendingUp className="w-8 h-8 text-emerald-400 mb-4 mx-auto" />
-              <h3 className="text-emerald-400 font-bold mb-2">Market Insights</h3>
-              <p className="text-slate-300 text-sm">Weekly analysis of financial trends and market opportunities</p>
-            </div>
-            <div className="bg-slate-700/50 rounded-xl p-6 border border-emerald-400/20">
-              <BookOpen className="w-8 h-8 text-emerald-400 mb-4 mx-auto" />
-              <h3 className="text-emerald-400 font-bold mb-2">Expert Guides</h3>
-              <p className="text-slate-300 text-sm">In-depth guides on tax strategies, financial planning, and business growth</p>
-            </div>
-            <div className="bg-slate-700/50 rounded-xl p-6 border border-emerald-400/20">
-              <Clock className="w-8 h-8 text-emerald-400 mb-4 mx-auto" />
-              <h3 className="text-emerald-400 font-bold mb-2">Timely Updates</h3>
-              <p className="text-slate-300 text-sm">Latest regulatory changes and compliance requirements</p>
-            </div>
-          </div>
-
-          <div className="bg-emerald-400/10 rounded-xl p-6 border border-emerald-400/30 mb-8">
-            <p className="text-emerald-300 font-semibold">
-              Integration with n8n workflow automation and Databox analytics coming soon for automated content delivery and performance tracking.
-            </p>
-          </div>
-
-          <Link
-            to="/contact"
-            className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-slate-900 font-black px-10 py-4 text-lg rounded-2xl shadow-2xl transition-all duration-300 hover-scale inline-block"
-          >
-            Get Notified When We Launch
-          </Link>
+        {/* Featured Posts Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {blogPosts.map((post) => (
+            <article
+              key={post.id}
+              className="bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-emerald-400/10 transition-all duration-300 group"
+            >
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-emerald-400 text-slate-900 px-3 py-1 rounded-full text-xs font-bold">
+                    {post.category}
+                  </span>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center gap-4 text-xs text-slate-400 mb-3">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-3 h-3" />
+                    {post.date}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-3 h-3" />
+                    {post.readTime}
+                  </div>
+                </div>
+                
+                <h2 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors duration-300">
+                  {post.title}
+                </h2>
+                
+                <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-xs text-slate-400">
+                    <User className="w-3 h-3" />
+                    {post.author}
+                  </div>
+                  <Link
+                    to={`/blog/${post.id}`}
+                    className="text-emerald-400 hover:text-emerald-300 font-semibold text-sm transition-colors duration-300"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
 
         {/* Newsletter Signup */}
@@ -70,7 +145,7 @@ export default function Blog() {
             Stay Informed
           </h3>
           <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
-            Be the first to receive our latest insights, industry updates, and exclusive content when our blog launches.
+            Get the latest insights, industry updates, and exclusive content delivered directly to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
