@@ -9,7 +9,7 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
     aria-label="pagination"
-    className={cn("mx-auto flex w-full justify-center px-4", className)}
+    className={cn("mx-auto flex w-full justify-center px-2 sm:px-4", className)}
     {...props}
   />
 )
@@ -53,7 +53,7 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
-      "min-w-0 text-xs sm:text-sm",
+      "min-w-8 sm:min-w-9 text-sm whitespace-nowrap",
       className
     )}
     {...props}
@@ -68,12 +68,12 @@ const PaginationPrevious = ({
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 pl-2 pr-2 sm:pl-2.5 text-xs sm:text-sm", className)}
+    className={cn("gap-1 px-2 sm:px-3 text-sm font-medium", className)}
     {...props}
   >
-    <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
-    <span className="hidden sm:inline">Previous</span>
-    <span className="sm:hidden">Prev</span>
+    <ChevronLeft className="h-4 w-4 flex-shrink-0" />
+    <span className="hidden xs:inline">Previous</span>
+    <span className="xs:hidden">Prev</span>
   </PaginationLink>
 )
 PaginationPrevious.displayName = "PaginationPrevious"
@@ -85,12 +85,12 @@ const PaginationNext = ({
   <PaginationLink
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 pl-2 pr-2 sm:pr-2.5 text-xs sm:text-sm", className)}
+    className={cn("gap-1 px-2 sm:px-3 text-sm font-medium", className)}
     {...props}
   >
-    <span className="hidden sm:inline">Next</span>
-    <span className="sm:hidden">Next</span>
-    <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
+    <span className="hidden xs:inline">Next</span>
+    <span className="xs:hidden">Next</span>
+    <ChevronRight className="h-4 w-4 flex-shrink-0" />
   </PaginationLink>
 )
 PaginationNext.displayName = "PaginationNext"
@@ -101,10 +101,10 @@ const PaginationEllipsis = ({
 }: React.ComponentProps<"span">) => (
   <span
     aria-hidden
-    className={cn("flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center", className)}
+    className={cn("flex h-9 w-9 items-center justify-center", className)}
     {...props}
   >
-    <MoreHorizontal className="h-3 w-3 sm:h-4 sm:w-4" />
+    <MoreHorizontal className="h-4 w-4" />
     <span className="sr-only">More pages</span>
   </span>
 )
