@@ -3,73 +3,73 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 pt-20 pb-20 md:pb-40 md:pt-40 relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 overflow-hidden animate-fade-in">
+    <section className="w-full flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16 pt-12 pb-12 md:pb-40 md:pt-40 relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 overflow-hidden animate-fade-in">
       {/* Decorative Elements */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-20 w-80 h-80 bg-emerald-400/5 rounded-full blur-3xl"></div>
       
-      <div className="flex-1 z-10 space-y-6 md:space-y-12 px-4 md:px-6 max-w-4xl w-full">
+      <div className="flex-1 z-10 space-y-4 md:space-y-12 px-4 md:px-6 max-w-4xl w-full">
         <div className="flex items-center justify-center md:justify-start gap-6 mb-4 md:mb-8">
           <img 
             src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png" 
             alt="Craven Financial Solutions - Premier CPA and CFO Services in Texas" 
             loading="eager" 
-            className="w-full max-w-[280px] md:max-w-96 h-auto shadow-2xl border-2 border-amber-400/30 object-cover" 
+            className="w-full max-w-[240px] md:max-w-96 h-auto shadow-2xl border-2 border-amber-400/30 object-cover" 
           />
         </div>
         
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-slate-100 leading-tight max-w-4xl drop-shadow-2xl tracking-tight text-center md:text-left">
+        <h1 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-black text-slate-100 leading-tight max-w-full break-words drop-shadow-2xl tracking-tight text-center md:text-left">
           America's Premier{" "}
           <span className="text-transparent bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text">CFO & CPA</span>{" "}
           <span className="text-amber-400">Advisory</span>
         </h1>
         
-        <p className="max-w-2xl text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-200 font-medium leading-relaxed text-center md:text-left">
+        <p className="max-w-full md:max-w-2xl text-base sm:text-lg md:text-2xl lg:text-3xl text-slate-200 font-medium leading-relaxed text-center md:text-left break-words">
           Transforming businesses nationwide with precision accounting, strategic tax optimization, and executive-level financial leadership.{" "}
           <span className="text-amber-400 font-bold">Decades of excellence. Multiple Texas locations serving clients coast to coast.</span>
         </p>
         
-        <div className="bg-slate-800/60 backdrop-blur-sm border border-amber-400/30 rounded-2xl p-4 md:p-8 shadow-2xl">
-          <h2 className="text-amber-400 font-bold text-lg md:text-xl mb-3 md:mb-4 text-center md:text-left">Our Nationwide Reach</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 text-slate-200 text-base md:text-lg font-medium">
+        <div className="bg-slate-800/60 backdrop-blur-sm border border-amber-400/30 rounded-2xl p-4 md:p-8 shadow-2xl max-w-full overflow-hidden">
+          <h2 className="text-amber-400 font-bold text-base md:text-xl mb-3 md:mb-4 text-center md:text-left">Our Nationwide Reach</h2>
+          <ul className="grid grid-cols-1 gap-3 md:gap-4 text-slate-200 text-sm md:text-lg font-medium">
             <li className="flex items-center gap-3">
               <div className="w-3 h-3 bg-amber-400 rounded-full flex-shrink-0"></div>
-              <span className="leading-tight">Outsourced CFO & Controller Services</span>
+              <span className="leading-tight break-words">Outsourced CFO & Controller Services</span>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-              <span className="leading-tight">Strategic Tax Planning & Compliance</span>
+              <span className="leading-tight break-words">Strategic Tax Planning & Compliance</span>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-3 h-3 bg-amber-400 rounded-full flex-shrink-0"></div>
-              <span className="leading-tight">Advanced Payroll & HR Integration</span>
+              <span className="leading-tight break-words">Advanced Payroll & HR Integration</span>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-              <span className="leading-tight">Cloud-Based Financial Systems</span>
+              <span className="leading-tight break-words">Cloud-Based Financial Systems</span>
             </li>
           </ul>
         </div>
         
-        <div className="flex gap-4 md:gap-6 flex-col sm:flex-row">
+        <div className="flex gap-4 flex-col sm:flex-row max-w-full">
           <Link 
             to="/contact" 
-            className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-black px-6 md:px-12 py-4 md:py-6 text-lg md:text-xl rounded-2xl shadow-2xl transition-all duration-300 hover-scale text-center border-2 border-amber-300" 
+            className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-black px-4 md:px-12 py-3 md:py-6 text-base md:text-xl rounded-2xl shadow-2xl transition-all duration-300 hover-scale text-center border-2 border-amber-300 min-w-0" 
             aria-label="Schedule Strategic Consultation with Craven Financial Solutions"
           >
             Schedule Strategic Consultation
           </Link>
           <Link 
             to="/services" 
-            className="bg-slate-800/80 backdrop-blur-sm border-2 border-emerald-400 text-emerald-400 font-black px-6 md:px-12 py-4 md:py-6 text-lg md:text-xl rounded-2xl shadow-xl hover:bg-slate-700/80 transition-all duration-300 hover-scale text-center" 
+            className="bg-slate-800/80 backdrop-blur-sm border-2 border-emerald-400 text-emerald-400 font-black px-4 md:px-12 py-3 md:py-6 text-base md:text-xl rounded-2xl shadow-xl hover:bg-slate-700/80 transition-all duration-300 hover-scale text-center min-w-0" 
             aria-label="Explore CPA and CFO Services Nationwide"
           >
             Explore Our Solutions
           </Link>
         </div>
         
-        <div className="text-sm md:text-lg mt-4 md:mt-8 text-amber-300 font-bold opacity-95 tracking-wide bg-slate-800/40 backdrop-blur-sm px-4 md:px-6 py-3 md:py-4 rounded-xl border border-amber-400/30 text-center md:text-left">
-          🏢 Strategic Texas Locations • 🚀 Cutting-Edge Technology • 💎 Uncompromising Excellence
+        <div className="text-xs sm:text-sm md:text-lg mt-4 md:mt-8 text-amber-300 font-bold opacity-95 tracking-wide bg-slate-800/40 backdrop-blur-sm px-3 md:px-6 py-3 md:py-4 rounded-xl border border-amber-400/30 text-center md:text-left max-w-full overflow-hidden">
+          <span className="break-words">🏢 Strategic Texas Locations • 🚀 Cutting-Edge Technology • 💎 Uncompromising Excellence</span>
         </div>
       </div>
       
