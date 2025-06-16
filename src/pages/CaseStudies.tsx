@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatbotWidget from "@/components/ChatbotWidget";
@@ -7,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const caseStudies = [
   {
+    id: 1,
     icon: <TrendingUp className="w-8 h-8 text-emerald-400" />,
     title: "Retail Chain Transformation",
     industry: "Retail & E-commerce",
@@ -184,6 +184,19 @@ export default function CaseStudies() {
                           — {study.client}
                         </cite>
                       </div>
+
+                      {/* Read More Link - Only for the first case study with detailed page */}
+                      {study.id === 1 && (
+                        <div className="pt-4">
+                          <Link
+                            to={`/case-studies/${study.id}`}
+                            className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
+                          >
+                            Read Full Case Study
+                            <ArrowRight className="w-4 h-4" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
 
