@@ -19,7 +19,7 @@ export default function Header() {
           <img
             src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
             alt="Craven Financial Solutions Logo"
-            className="h-12 w-auto rounded-xl shadow-lg"
+            className="h-20 w-auto rounded-xl shadow-lg"
             loading="eager"
           />
         </div>
