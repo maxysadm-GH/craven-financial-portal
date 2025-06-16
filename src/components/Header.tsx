@@ -2,6 +2,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,20 +60,104 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
-              to="/services"
-              className={`font-semibold transition-colors duration-300 ${
-                isActive("/services") ? "text-emerald-400" : "text-slate-300 hover:text-emerald-400"
-              }`}
-            >
-              Services
-            </Link>
-            <button
-              onClick={scrollToTools}
-              className="font-semibold text-slate-300 hover:text-emerald-400 transition-colors duration-300"
-            >
-              Tools
-            </button>
+            
+            {/* Services Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent data-[state=open]:bg-transparent font-semibold text-slate-300 hover:text-emerald-400 transition-colors duration-300 focus:bg-transparent">
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-slate-800 border-emerald-400/20">
+                    <div className="p-4 w-80">
+                      <div className="grid gap-3">
+                        <Link
+                          to="/services#cfo"
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Outsourced CFO Services</div>
+                          <div className="text-slate-300 text-xs mt-1">Strategic financial leadership for your business</div>
+                        </Link>
+                        <Link
+                          to="/services#tax"
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Tax Planning & Compliance</div>
+                          <div className="text-slate-300 text-xs mt-1">Comprehensive tax strategies and preparation</div>
+                        </Link>
+                        <Link
+                          to="/services#accounting"
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Accounting & Bookkeeping</div>
+                          <div className="text-slate-300 text-xs mt-1">Accurate financial records and reporting</div>
+                        </Link>
+                        <Link
+                          to="/services#payroll"
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Payroll Services</div>
+                          <div className="text-slate-300 text-xs mt-1">Complete payroll management solutions</div>
+                        </Link>
+                        <Link
+                          to="/services#consulting"
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Business Consulting</div>
+                          <div className="text-slate-300 text-xs mt-1">Expert guidance for business growth</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            {/* Tools Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent data-[state=open]:bg-transparent font-semibold text-slate-300 hover:text-emerald-400 transition-colors duration-300 focus:bg-transparent">
+                    Tools
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-slate-800 border-emerald-400/20">
+                    <div className="p-4 w-80">
+                      <div className="grid gap-3">
+                        <button
+                          onClick={scrollToTools}
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors text-left"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Tax Calculator</div>
+                          <div className="text-slate-300 text-xs mt-1">Calculate your federal tax liability</div>
+                        </button>
+                        <button
+                          onClick={scrollToTools}
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors text-left"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Retirement Planner</div>
+                          <div className="text-slate-300 text-xs mt-1">Plan your retirement savings strategy</div>
+                        </button>
+                        <button
+                          onClick={scrollToTools}
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors text-left"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Budget Planner</div>
+                          <div className="text-slate-300 text-xs mt-1">Analyze your monthly budget and expenses</div>
+                        </button>
+                        <button
+                          onClick={scrollToTools}
+                          className="block p-3 rounded-lg hover:bg-slate-700 transition-colors text-left"
+                        >
+                          <div className="text-emerald-400 font-semibold text-sm">Loan Calculator</div>
+                          <div className="text-slate-300 text-xs mt-1">Calculate loan payments and interest</div>
+                        </button>
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             <Link
               to="/case-studies"
               className={`font-semibold transition-colors duration-300 ${
