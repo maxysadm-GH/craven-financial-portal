@@ -1,52 +1,124 @@
 
+import { Link } from "react-router-dom";
+import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-900/95 backdrop-blur-sm border-t border-amber-400/20 mt-16 py-12 shadow-2xl">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="flex items-center gap-4">
-          <img
-            src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
-            alt="Craven Financial Solutions Logo"
-            className="h-12 w-auto rounded-xl shadow-lg"
-            loading="lazy"
-          />
-        </div>
-        <div className="text-center">
-          <div className="text-amber-400 font-bold mb-2">Our Strategic Locations</div>
-          <div className="flex flex-wrap justify-center gap-4 text-slate-300 text-sm">
-            <span>Dallas-Fort Worth</span>
-            <span>•</span>
-            <span>Austin</span>
-            <span>•</span>
-            <span>Houston</span>
-            <span>•</span>
-            <span>San Antonio</span>
+    <footer className="w-full bg-slate-900/98 backdrop-blur-sm border-t border-amber-400/20 mt-16 py-12 shadow-2xl">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <img
+                src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
+                alt="Craven Financial Solutions Logo"
+                className="h-12 w-auto rounded-xl shadow-lg brightness-110"
+                loading="lazy"
+              />
+            </div>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              America's premier CFO & CPA advisory firm, transforming businesses nationwide with precision accounting and strategic financial leadership.
+            </p>
+            <div className="flex gap-3">
+              <a href="#" className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-emerald-400/20 transition-colors">
+                <Facebook className="w-4 h-4 text-slate-400 hover:text-emerald-400" />
+              </a>
+              <a href="#" className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-emerald-400/20 transition-colors">
+                <Twitter className="w-4 h-4 text-slate-400 hover:text-emerald-400" />
+              </a>
+              <a href="#" className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-emerald-400/20 transition-colors">
+                <Linkedin className="w-4 h-4 text-slate-400 hover:text-emerald-400" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-amber-400 font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-amber-400 font-bold mb-4">Services</h3>
+            <ul className="space-y-2 text-sm">
+              <li className="text-slate-300">Outsourced CFO Services</li>
+              <li className="text-slate-300">Tax Planning & Compliance</li>
+              <li className="text-slate-300">Accounting & Bookkeeping</li>
+              <li className="text-slate-300">Payroll Services</li>
+              <li className="text-slate-300">Business Consulting</li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-amber-400 font-bold mb-4">Contact</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-emerald-400" />
+                <a href="tel:+18555555555" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  +1 (855) 555-5555
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-emerald-400" />
+                <a href="mailto:info@cravenfs.com" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm">
+                  info@cravenfs.com
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-emerald-400 mt-0.5" />
+                <div className="text-slate-300 text-sm">
+                  <div>Dallas • Austin</div>
+                  <div>Houston • San Antonio</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <nav>
-          <ul className="flex flex-col md:flex-row items-center gap-6">
-            <li>
-              <a 
-                href="mailto:info@cravenfs.com" 
-                className="hover:text-amber-400 text-slate-300 font-semibold transition-colors"
-              >
-                info@cravenfs.com
-              </a>
-            </li>
-            <li>
-              <a 
-                href="tel:+18555555555" 
-                className="hover:text-amber-400 text-slate-300 font-semibold transition-colors"
-              >
-                +1 (855) 555-5555
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="hidden md:inline text-amber-400">|</span>
-              <span className="text-slate-400 text-sm">© {new Date().getFullYear()} CravenFS</span>
-            </li>
-          </ul>
-        </nav>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-slate-400 text-sm text-center md:text-left">
+            © 2025 Craven Financial Solutions. All rights reserved.
+          </div>
+          <div className="flex gap-6 text-sm">
+            <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
+              Terms of Service
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

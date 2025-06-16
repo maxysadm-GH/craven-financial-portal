@@ -9,6 +9,7 @@ import CaseStudies from "@/components/sections/CaseStudies";
 import IndustryArticles from "@/components/sections/IndustryArticles";
 import ROIcalculator from "@/components/ROIcalculator";
 import IdealClientProfileForm from "@/components/IdealClientProfileForm";
+import FinancialTools from "@/components/sections/FinancialTools";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <main className="flex-1 flex flex-col">
         <Hero />
         <BusinessLines />
+        <FinancialTools />
         <ROIcalculator />
         <CaseStudies />
         <IndustryArticles />
@@ -28,4 +30,5 @@ const Index = () => {
     </div>
   );
 };
+
 export default Index;
