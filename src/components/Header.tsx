@@ -30,14 +30,14 @@ export default function Header() {
 
   return (
     <header className="w-full bg-slate-900/95 backdrop-blur-sm border-b border-emerald-400/20 sticky top-0 z-50 shadow-xl">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <img
               src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
               alt="Craven Financial Solutions Logo"
-              className="h-20 w-auto brightness-125 contrast-125 saturate-110"
+              className="h-16 md:h-20 w-auto brightness-150 contrast-125 saturate-125 drop-shadow-lg"
               loading="eager"
             />
           </Link>
@@ -194,10 +194,10 @@ export default function Header() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-slate-300 hover:text-emerald-400 transition-colors"
+            className="md:hidden text-slate-300 hover:text-emerald-400 transition-colors p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
