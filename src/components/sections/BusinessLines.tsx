@@ -62,7 +62,7 @@ export default function BusinessLines() {
   return (
     <section className="max-w-7xl mx-auto px-4 pt-20 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700">
       <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-black text-emerald-400 mb-6 animate-fade-in tracking-tight">
+        <h2 className="text-5xl md:text-6xl font-black text-amber-400 mb-6 animate-fade-in tracking-tight">
           Services That Drive Results Across the USA
         </h2>
         <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto font-medium leading-relaxed">
@@ -70,7 +70,7 @@ export default function BusinessLines() {
         </p>
         <div className="flex flex-wrap justify-center gap-8 mt-8 text-emerald-300 font-semibold">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+            <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
             <span>Dallas-Fort Worth</span>
           </div>
           <div className="flex items-center gap-2">
@@ -78,7 +78,7 @@ export default function BusinessLines() {
             <span>Austin</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+            <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
             <span>Houston</span>
           </div>
           <div className="flex items-center gap-2">
@@ -92,10 +92,10 @@ export default function BusinessLines() {
           <a
             key={line.name}
             href={line.link}
-            className="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border-2 border-emerald-400/20 shadow-2xl overflow-hidden transition-all duration-300 hover:border-emerald-400/60 hover:shadow-emerald-400/20 hover:shadow-3xl flex flex-col h-full animate-fade-in hover:scale-105"
+            className="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border-2 border-amber-400/20 shadow-2xl overflow-hidden transition-all duration-300 hover:border-amber-400/60 hover:shadow-amber-400/20 hover:shadow-3xl flex flex-col h-full animate-fade-in hover:scale-105"
             style={{ 
               animationDelay: `${index * 100}ms`,
-              boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.15)" 
+              boxShadow: "0 25px 50px -12px rgba(251, 191, 36, 0.15)" 
             }}
           >
             <div className="relative h-48 w-full overflow-hidden">
@@ -106,12 +106,12 @@ export default function BusinessLines() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/60 via-slate-900/40 to-transparent" />
-              <div className="absolute top-4 right-4 w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute top-4 right-4 w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-slate-900 font-bold text-lg">{index + 1}</span>
               </div>
             </div>
             <div className="flex-1 flex flex-col p-8">
-              <h3 className="text-2xl font-black mb-4 text-emerald-400 group-hover:text-emerald-300 transition-colors">{line.name}</h3>
+              <h3 className="text-2xl font-black mb-4 text-amber-400 group-hover:text-amber-300 transition-colors">{line.name}</h3>
               <p className="text-slate-300 flex-1 text-lg leading-relaxed font-medium">{line.description}</p>
               <div className="mt-6 flex items-center text-emerald-400 font-bold text-lg group-hover:text-emerald-300 transition-colors">
                 <span className="mr-2">Explore Service</span>

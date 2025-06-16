@@ -13,23 +13,15 @@ const navLinks = [
 export default function Header() {
   const location = useLocation();
   return (
-    <header className="w-full bg-slate-900/95 backdrop-blur-sm border-b border-emerald-400/20 sticky top-0 z-50 shadow-lg">
+    <header className="w-full bg-slate-900/95 backdrop-blur-sm border-b border-amber-400/20 sticky top-0 z-50 shadow-lg">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <img
-            src="/lovable-uploads/f13fb6ec-0ea5-426d-b9cc-42271e186d52.png"
+            src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
             alt="Craven Financial Solutions Logo"
-            className="h-12 w-12 rounded-xl border-2 border-emerald-400 shadow-lg"
+            className="h-12 w-auto rounded-xl shadow-lg"
             loading="eager"
           />
-          <div className="flex flex-col">
-            <span className="font-black text-xl text-slate-100 tracking-wide">
-              Craven Financial Solutions
-            </span>
-            <span className="text-emerald-400 text-xs font-bold tracking-widest">
-              NATIONWIDE CFO & CPA SERVICES
-            </span>
-          </div>
         </div>
         <ul className="flex gap-8 items-center">
           {navLinks.map(link => (
@@ -38,8 +30,8 @@ export default function Header() {
                 to={link.path}
                 className={`font-bold px-4 py-2 transition-all duration-300 rounded-lg ${
                   location.pathname === link.path
-                    ? "text-emerald-400 bg-emerald-400/10 border border-emerald-400/30"
-                    : "text-slate-300 hover:text-emerald-400 hover:bg-slate-800/50"
+                    ? "text-amber-400 bg-amber-400/10 border border-amber-400/30"
+                    : "text-slate-300 hover:text-amber-400 hover:bg-slate-800/50"
                 }`}
               >
                 {link.name}
