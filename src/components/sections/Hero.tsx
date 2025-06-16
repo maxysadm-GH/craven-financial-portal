@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="flex-1 z-10 space-y-12 px-6 max-w-4xl">
         <div className="flex items-center gap-4 mb-8">
           <img
-            src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=100&q=80"
+            src="/lovable-uploads/f13fb6ec-0ea5-426d-b9cc-42271e186d52.png"
             alt="Craven Financial Solutions Logo"
             className="w-16 h-16 rounded-2xl border-2 border-emerald-400 shadow-lg"
             loading="eager"
