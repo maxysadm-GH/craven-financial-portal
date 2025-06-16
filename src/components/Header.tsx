@@ -9,6 +9,18 @@ export default function Header() {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const scrollToTools = () => {
+    if (location.pathname !== '/') {
+      window.location.href = '/#tools';
+    } else {
+      const toolsSection = document.getElementById('tools');
+      if (toolsSection) {
+        toolsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="w-full bg-slate-900/95 backdrop-blur-sm border-b border-emerald-400/20 sticky top-0 z-50 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
@@ -49,12 +61,12 @@ export default function Header() {
             >
               Services
             </Link>
-            <Link
-              to="/#tools"
+            <button
+              onClick={scrollToTools}
               className="font-semibold text-slate-300 hover:text-emerald-400 transition-colors duration-300"
             >
               Tools
-            </Link>
+            </button>
             <Link
               to="/case-studies"
               className={`font-semibold transition-colors duration-300 ${
@@ -129,13 +141,12 @@ export default function Header() {
               >
                 Services
               </Link>
-              <Link
-                to="/#tools"
-                className="font-semibold text-slate-300 hover:text-emerald-400 transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={scrollToTools}
+                className="font-semibold text-slate-300 hover:text-emerald-400 transition-colors duration-300 text-left"
               >
                 Tools
-              </Link>
+              </button>
               <Link
                 to="/case-studies"
                 className={`font-semibold transition-colors duration-300 ${

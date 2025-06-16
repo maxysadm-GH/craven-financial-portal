@@ -3,6 +3,17 @@ import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
+  const scrollToTools = () => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#tools';
+    } else {
+      const toolsSection = document.getElementById('tools');
+      if (toolsSection) {
+        toolsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="w-full bg-slate-900/98 backdrop-blur-sm border-t border-amber-400/20 mt-16 py-12 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -103,24 +114,24 @@ export default function Footer() {
             <h3 className="text-amber-400 font-bold mb-4">Tools</h3>
             <ul className="space-y-2 text-sm mb-6">
               <li>
-                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <button onClick={scrollToTools} className="text-slate-300 hover:text-emerald-400 transition-colors text-left">
                   Tax Calculator
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <button onClick={scrollToTools} className="text-slate-300 hover:text-emerald-400 transition-colors text-left">
                   Retirement Planner
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <button onClick={scrollToTools} className="text-slate-300 hover:text-emerald-400 transition-colors text-left">
                   Budget Planner
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/#tools" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <button onClick={scrollToTools} className="text-slate-300 hover:text-emerald-400 transition-colors text-left">
                   Loan Calculator
-                </Link>
+                </button>
               </li>
             </ul>
             
