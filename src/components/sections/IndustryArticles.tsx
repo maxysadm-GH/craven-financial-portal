@@ -140,14 +140,14 @@ const articles = [
 export default function IndustryArticles() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-14">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-8 text-center tracking-tight">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-slate-100 mb-8 text-center tracking-tight">
         Popular Insights by Industry
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {articles.map(article => (
           <div
             key={article.path}
-            className="bg-white border border-blue-100 rounded-2xl shadow-xl hover:shadow-2xl group overflow-hidden transition flex flex-col h-full animate-fade-in"
+            className="bg-slate-800/50 backdrop-blur-sm border border-amber-400/20 rounded-2xl shadow-2xl hover:shadow-amber-400/10 hover:bg-slate-700/50 group overflow-hidden transition-all duration-300 flex flex-col h-full animate-fade-in"
           >
             <div className="relative h-60 w-full overflow-hidden">
               <img
@@ -157,19 +157,19 @@ export default function IndustryArticles() {
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/25 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 to-transparent pointer-events-none" />
             </div>
             <div className="p-6 flex flex-col flex-1">
-              <div className="text-xs text-blue-700 mb-2 font-bold tracking-wide uppercase">
+              <div className="text-xs text-amber-400 mb-2 font-bold tracking-wide uppercase">
                 {article.industry}
               </div>
-              <h3 className="text-lg md:text-xl font-extrabold mb-1 text-blue-900 group-hover:underline">
+              <h3 className="text-lg md:text-xl font-extrabold mb-1 text-slate-100 group-hover:text-amber-400 transition-colors duration-300">
                 {article.title}
               </h3>
-              <p className="text-gray-600 mb-3 text-sm flex-1">{article.summary}</p>
+              <p className="text-slate-300 mb-3 text-sm flex-1">{article.summary}</p>
               <Link
                 to={article.path}
-                className="story-link text-blue-700 font-semibold mt-auto"
+                className="text-amber-400 font-semibold mt-auto hover:text-amber-300 transition-colors duration-300"
                 aria-label={`Read article: ${article.title}`}
               >
                 Read Article →
