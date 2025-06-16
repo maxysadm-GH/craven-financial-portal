@@ -43,7 +43,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/"
               className={`font-semibold transition-colors duration-300 ${
@@ -192,29 +192,18 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* CTA Button + Mobile Menu Toggle */}
-          <div className="flex items-center gap-3">
-            {/* CTA Button - Always Visible */}
-            <Link
-              to="/contact"
-              className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-black px-3 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-lg shadow-lg transition-all duration-300 hover-scale whitespace-nowrap"
-            >
-              Schedule Free Assessment
-            </Link>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              className="lg:hidden text-slate-300 hover:text-emerald-400 transition-colors p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-slate-300 hover:text-emerald-400 transition-colors p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-emerald-400/20 pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-emerald-400/20 pt-4">
             <div className="flex flex-col gap-4">
               <Link
                 to="/"
