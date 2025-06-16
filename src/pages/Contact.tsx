@@ -214,7 +214,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Calendly Integration Placeholder */}
+            {/* Calendly Integration */}
             <div className="bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-8 shadow-2xl">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-emerald-400/20 rounded-lg flex items-center justify-center">
@@ -231,10 +231,10 @@ export default function Contact() {
                   Calendly widget will be integrated here
                 </div>
                 <div className="text-sm text-slate-400">
-                  <!-- Calendly inline widget begin -->
-                  <div className="calendly-inline-widget" data-url="https://calendly.com/your-link" style={{minWidth: '320px', height: '200px'}}></div>
-                  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                  <!-- Calendly inline widget end -->
+                  {/* Calendly integration placeholder */}
+                  <div className="w-full h-32 bg-slate-600/30 rounded border-2 border-dashed border-emerald-400/30 flex items-center justify-center">
+                    <span className="text-emerald-400">Calendly Widget Placeholder</span>
+                  </div>
                 </div>
               </div>
             </div>
