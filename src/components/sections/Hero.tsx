@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 export default function Hero() {
@@ -13,14 +12,20 @@ export default function Hero() {
           <img
             src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
             alt="Craven Financial Solutions - Premier CPA and CFO Services in Texas"
-            className="w-64 h-auto rounded-2xl shadow-2xl border-2 border-amber-400/30"
+            className="w-96 h-auto rounded-2xl shadow-2xl border-2 border-amber-400/30"
             loading="eager"
           />
         </div>
         
         <h1 className="text-6xl md:text-7xl font-black text-slate-100 leading-tight max-w-4xl drop-shadow-2xl tracking-tight">
           America's Premier{" "}
-          <span className="text-transparent bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text">CFO & CPA</span>{" "}
+          <img
+            src="/lovable-uploads/327a3865-de4d-4bb8-85e2-bc863214a02e.png"
+            alt="Craven Financial Solutions Icon"
+            className="inline-block w-20 h-20 mx-2 align-middle"
+            loading="eager"
+          />
+          <span className="text-transparent bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text">FO & CPA</span>{" "}
           <span className="text-amber-400">Advisory</span>
         </h1>
         
@@ -73,7 +78,7 @@ export default function Hero() {
         </div>
       </div>
       
-      {/* Hero Visual with Icon replacing CF */}
+      {/* Hero Visual with new Icon */}
       <div className="flex-1 flex items-center justify-center md:justify-end relative z-10">
         <div className="w-full max-w-md h-80 md:h-96 rounded-3xl bg-gradient-to-br from-amber-400/20 via-slate-800/50 to-emerald-900/30 backdrop-blur-sm flex items-center justify-center shadow-2xl border-2 border-amber-400/30 relative overflow-hidden">
           <img
@@ -84,7 +89,7 @@ export default function Hero() {
           />
           <div className="w-48 h-48 rounded-2xl bg-slate-900/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative z-10 border-4 border-amber-400/50">
             <img
-              src="/lovable-uploads/327a3865-de4d-4bb8-85e2-bc863214a02e.png"
+              src="/lovable-uploads/7b6b6b46-16c9-4903-a8a5-267434f78bfa.png"
               alt="Craven Financial Solutions Icon - Nationwide CPA and CFO Services"
               className="w-32 h-auto rounded-xl"
               loading="eager"
