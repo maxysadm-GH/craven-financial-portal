@@ -1,56 +1,34 @@
 
 import React, { useState } from "react";
-import { Calculator, PiggyBank, CreditCard, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-const tools = [
-  {
-    icon: <Calculator className="w-8 h-8 text-emerald-400" />,
-    title: "Tax Calculator",
-    description: "Estimate your tax obligations and savings opportunities",
-    link: "#tax-calc"
-  },
-  {
-    icon: <PiggyBank className="w-8 h-8 text-emerald-400" />,
-    title: "Retirement Planner", 
-    description: "Plan your retirement savings and investment strategy",
-    link: "#retirement-calc"
-  },
-  {
-    icon: <CreditCard className="w-8 h-8 text-emerald-400" />,
-    title: "Budget Analyzer",
-    description: "Analyze spending patterns and optimize your budget",
-    link: "#budget-calc"
-  },
-  {
-    icon: <TrendingUp className="w-8 h-8 text-emerald-400" />,
-    title: "Loan Calculator",
-    description: "Calculate loan payments and compare financing options",
-    link: "#loan-calc"
-  }
-];
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import TaxCalculator from "@/components/calculators/TaxCalculator";
+import RetirementCalculator from "@/components/calculators/RetirementCalculator";
+import BudgetPlanner from "@/components/calculators/BudgetPlanner";
+import LoanCalculator from "@/components/calculators/LoanCalculator";
 
 export default function FinancialTools() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
   const [form, setForm] = useState({
     name: "",
+    company: "",
     email: "",
-    phone: ""
+    employees: ""
   });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    // Optional: Send to webhook or backend
-    console.log("Form submitted:", form);
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Client info submitted:", form);
+    setHasAccess(true);
+    // Optional: Send to webhook or backend
   };
 
   return (
@@ -64,7 +42,7 @@ export default function FinancialTools() {
         </p>
       </div>
 
-      {!formSubmitted ? (
+      {!hasAccess ? (
         <div className="max-w-md mx-auto bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-6 md:p-8 shadow-2xl">
           <div className="text-center mb-6">
             <h3 className="text-xl md:text-2xl font-bold text-emerald-400 mb-2">
@@ -77,10 +55,12 @@ export default function FinancialTools() {
           
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
+              <Label htmlFor="name" className="text-slate-200">Full Name *</Label>
               <Input
                 type="text"
                 name="name"
-                placeholder="Full Name *"
+                id="name"
+                placeholder="John Smith"
                 required
                 value={form.name}
                 onChange={handleInputChange}
@@ -88,10 +68,25 @@ export default function FinancialTools() {
               />
             </div>
             <div>
+              <Label htmlFor="company" className="text-slate-200">Company *</Label>
+              <Input
+                type="text"
+                name="company"
+                id="company"
+                placeholder="ABC Corporation"
+                required
+                value={form.company}
+                onChange={handleInputChange}
+                className="bg-slate-700/50 border-slate-600 text-slate-100 focus:border-emerald-400"
+              />
+            </div>
+            <div>
+              <Label htmlFor="email" className="text-slate-200">Email Address *</Label>
               <Input
                 type="email"
                 name="email"
-                placeholder="Email Address *"
+                id="email"
+                placeholder="john@company.com"
                 required
                 value={form.email}
                 onChange={handleInputChange}
@@ -99,12 +94,14 @@ export default function FinancialTools() {
               />
             </div>
             <div>
+              <Label htmlFor="employees" className="text-slate-200">Number of Employees *</Label>
               <Input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number *"
+                type="number"
+                name="employees"
+                id="employees"
+                placeholder="25"
                 required
-                value={form.phone}
+                value={form.employees}
                 onChange={handleInputChange}
                 className="bg-slate-700/50 border-slate-600 text-slate-100 focus:border-emerald-400"
               />
@@ -118,30 +115,35 @@ export default function FinancialTools() {
           </form>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {tools.map((tool, index) => (
-            <div
-              key={tool.title}
-              className="bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-6 shadow-2xl hover:bg-slate-700/50 transition-all duration-300 hover:scale-105"
-            >
-              <div className="flex items-center justify-center w-16 h-16 bg-emerald-400/10 rounded-xl mb-4 mx-auto">
-                {tool.icon}
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-emerald-400 mb-2 text-center">
-                {tool.title}
+        <div className="space-y-8">
+          <div className="text-center mb-8">
+            <p className="text-emerald-400 font-semibold">Welcome, {form.name}!</p>
+            <p className="text-slate-300">Use our calculators to analyze your financial situation</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            <TaxCalculator />
+            <RetirementCalculator />
+            <BudgetPlanner />
+            <LoanCalculator />
+          </div>
+          
+          <div className="text-center mt-12">
+            <div className="max-w-2xl mx-auto bg-slate-800/30 border border-emerald-400/20 rounded-2xl p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-emerald-400 mb-4">
+                Ready to Optimize Your Financial Strategy?
               </h3>
-              <p className="text-slate-300 text-sm md:text-base mb-4 text-center">
-                {tool.description}
+              <p className="text-slate-300 mb-6">
+                These calculators provide estimates. Get personalized recommendations from our financial experts with a free assessment call.
               </p>
               <Button
-                variant="outline"
-                className="w-full border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10"
-                onClick={() => window.open(tool.link, '_blank')}
+                onClick={() => window.open('/contact', '_blank')}
+                className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-slate-900 font-bold px-8 py-3"
               >
-                Open Calculator
+                Schedule Your Free Assessment Call
               </Button>
             </div>
-          ))}
+          </div>
         </div>
       )}
     </section>
