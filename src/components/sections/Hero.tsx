@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 export default function Hero() {
@@ -8,27 +9,18 @@ export default function Hero() {
       <div className="absolute bottom-20 left-20 w-80 h-80 bg-emerald-400/5 rounded-full blur-3xl"></div>
       
       <div className="flex-1 z-10 space-y-12 px-6 max-w-4xl">
-        <div className="flex items-center gap-8 mb-8">
+        <div className="flex items-center gap-6 mb-8">
           <img
             src="/lovable-uploads/548a3c8c-9c9c-482c-b561-20562d9045af.png"
             alt="Craven Financial Solutions - Premier CPA and CFO Services in Texas"
-            className="w-48 h-auto rounded-3xl shadow-2xl border-3 border-amber-400/40"
+            className="w-32 h-auto rounded-2xl shadow-2xl border-2 border-amber-400/30"
             loading="eager"
           />
         </div>
         
         <h1 className="text-6xl md:text-7xl font-black text-slate-100 leading-tight max-w-4xl drop-shadow-2xl tracking-tight">
           Texas Premier{" "}
-          <span className="text-transparent bg-gradient-to-r from-emerald-400 to-amber-400 bg-clip-text">CPA &</span>{" "}
-          <span className="inline-flex items-center gap-3">
-            <img
-              src="/lovable-uploads/fa1d14c6-de4e-4ce9-957b-eb25f4897338.png"
-              alt="Craven Financial Solutions Icon"
-              className="w-16 h-16 md:w-20 md:h-20 inline-block"
-              loading="eager"
-            />
-            <span className="text-amber-400">O</span>
-          </span>{" "}
+          <span className="text-transparent bg-gradient-to-r from-emerald-400 to-amber-400 bg-clip-text">CPA & CFO</span>{" "}
           <span className="text-amber-400">Advisory</span>
         </h1>
         
