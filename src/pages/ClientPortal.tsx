@@ -2,13 +2,13 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Lock, BarChart3, FileText, DollarSign, TrendingUp } from "lucide-react";
 
 export default function ClientPortal() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
-  // Demo auth: for production, replace with real authentication and Databox embed logic.
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -20,60 +20,166 @@ export default function ClientPortal() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-gray-50 min-h-screen flex flex-col">
+    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-20">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-4xl">
           {!loggedIn ? (
-            <form
-              className="bg-white border rounded-xl p-6 shadow flex flex-col gap-6"
-              onSubmit={handleLogin}
-              autoComplete="off"
-            >
-              <h1 className="text-2xl font-bold text-blue-800 mb-3">Client Login</h1>
-              <input
-                className="w-full px-4 py-2 rounded border border-gray-200 focus:ring-2 focus:ring-blue-100 outline-none"
-                type="email"
-                placeholder="Email"
-                required
-                value={loginForm.email}
-                onChange={e => setLoginForm({ ...loginForm, email: e.target.value })}
-                autoComplete="username"
-              />
-              <input
-                className="w-full px-4 py-2 rounded border border-gray-200 focus:ring-2 focus:ring-blue-100 outline-none"
-                type="password"
-                placeholder="Password"
-                required
-                value={loginForm.password}
-                onChange={e => setLoginForm({ ...loginForm, password: e.target.value })}
-                autoComplete="current-password"
-              />
-              {error && <span className="text-red-600 text-sm">{error}</span>}
-              <button
-                type="submit"
-                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg px-6 py-3 transition"
-              >
-                Log In
-              </button>
-              <span className="text-xs text-gray-400 mt-2">
-                (Demo only. Your dashboard will be revealed here after login.)
-              </span>
-            </form>
-          ) : (
-            <section className="bg-white shadow border rounded-xl p-8 flex flex-col items-center">
-              <h2 className="text-xl font-semibold text-blue-900 mb-3">Welcome!</h2>
-              <div className="bg-gray-100 rounded-lg p-6 text-gray-700 text-center min-h-[180px] w-full max-w-sm mb-6 flex flex-col items-center justify-center">
-                {/* Placeholder for Databox dashboard */}
-                <span>Your private Databox dashboard will be displayed here.</span>
+            <div className="text-center mb-8">
+              <h1 className="text-4xl md:text-5xl font-black text-slate-100 mb-6 tracking-tight">
+                Client <span className="text-emerald-400">Portal</span>
+              </h1>
+              <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
+                Access your personalized dashboard with real-time financial insights, reports, and analytics.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Login Form */}
+                <form
+                  className="bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-8 shadow-2xl"
+                  onSubmit={handleLogin}
+                  autoComplete="off"
+                >
+                  <div className="w-16 h-16 bg-emerald-400/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Lock className="w-8 h-8 text-emerald-400" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-slate-100 mb-6 text-center">Secure Login</h2>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-emerald-400 font-semibold mb-2">Email Address</label>
+                      <input
+                        className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-slate-100 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 outline-none transition-all"
+                        type="email"
+                        placeholder="your.email@company.com"
+                        required
+                        value={loginForm.email}
+                        onChange={e => setLoginForm({ ...loginForm, email: e.target.value })}
+                        autoComplete="username"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-emerald-400 font-semibold mb-2">Password</label>
+                      <input
+                        className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-slate-100 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 outline-none transition-all"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                        value={loginForm.password}
+                        onChange={e => setLoginForm({ ...loginForm, password: e.target.value })}
+                        autoComplete="current-password"
+                      />
+                    </div>
+                    {error && <div className="text-red-400 text-sm bg-red-400/10 rounded-lg p-3 border border-red-400/20">{error}</div>}
+                    <button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-slate-900 font-black py-3 rounded-lg shadow-xl transition-all duration-300 hover-scale"
+                    >
+                      Access Dashboard
+                    </button>
+                  </div>
+                  
+                  <div className="text-center mt-6">
+                    <div className="text-sm text-slate-400">Demo Mode - Use any credentials</div>
+                    <a href="#" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold">
+                      Forgot Password?
+                    </a>
+                  </div>
+                </form>
+
+                {/* Features Preview */}
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-slate-100 mb-6">
+                    What's Inside Your <span className="text-emerald-400">Dashboard</span>
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                        <BarChart3 className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <div className="text-slate-100 font-semibold">Real-time Analytics</div>
+                        <div className="text-slate-400 text-sm">Live financial metrics and KPIs</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                        <FileText className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <div className="text-slate-100 font-semibold">Financial Reports</div>
+                        <div className="text-slate-400 text-sm">Monthly statements and tax documents</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                        <DollarSign className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <div className="text-slate-100 font-semibold">Cash Flow Tracking</div>
+                        <div className="text-slate-400 text-sm">Monitor income and expenses</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 p-4 bg-slate-800/30 rounded-lg border border-emerald-400/20">
+                      <div className="w-10 h-10 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                        <TrendingUp className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <div className="text-slate-100 font-semibold">Growth Insights</div>
+                        <div className="text-slate-400 text-sm">Strategic recommendations and forecasts</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button
-                className="text-blue-700 hover:text-blue-900 underline font-semibold"
-                onClick={() => setLoggedIn(false)}
-              >
-                Log out
-              </button>
-            </section>
+            </div>
+          ) : (
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-8 shadow-2xl">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-slate-100 mb-4">Welcome Back!</h2>
+                <p className="text-slate-300">Your personalized financial dashboard</p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-slate-700/50 rounded-xl p-6 border border-emerald-400/20 text-center">
+                  <DollarSign className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                  <div className="text-2xl font-bold text-slate-100">$245,680</div>
+                  <div className="text-slate-400 text-sm">Monthly Revenue</div>
+                </div>
+                <div className="bg-slate-700/50 rounded-xl p-6 border border-emerald-400/20 text-center">
+                  <TrendingUp className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                  <div className="text-2xl font-bold text-slate-100">+23.5%</div>
+                  <div className="text-slate-400 text-sm">Growth Rate</div>
+                </div>
+                <div className="bg-slate-700/50 rounded-xl p-6 border border-emerald-400/20 text-center">
+                  <BarChart3 className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                  <div className="text-2xl font-bold text-slate-100">94.2%</div>
+                  <div className="text-slate-400 text-sm">Efficiency Score</div>
+                </div>
+              </div>
+
+              <div className="bg-slate-700/50 rounded-xl p-8 border border-emerald-400/20 text-center min-h-[300px] flex flex-col items-center justify-center mb-8">
+                <BarChart3 className="w-16 h-16 text-emerald-400 mb-4" />
+                <h3 className="text-xl font-bold text-slate-100 mb-2">Databox Dashboard Integration</h3>
+                <p className="text-slate-300 mb-4">Your comprehensive financial analytics will be displayed here</p>
+                <div className="text-sm text-slate-400 bg-slate-800/50 rounded-lg p-4 border border-slate-600">
+                  Databox embedded dashboard coming soon with real-time data visualization, custom reports, and automated insights.
+                </div>
+              </div>
+
+              <div className="text-center">
+                <button
+                  className="text-emerald-400 hover:text-emerald-300 font-semibold underline"
+                  onClick={() => setLoggedIn(false)}
+                >
+                  Sign Out
+                </button>
+              </div>
+            </div>
           )}
         </div>
       </main>
